@@ -64,5 +64,31 @@ ${kittenThreeDesc}
 </p>
 </li>`;
 
-elementList.innerHTML = kittenOne + kittenTwo + kittenThree;
+elementList.innerHTML = "";
 
+//Adakitten2.3//
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
+  if( kittenOneDesc.includes(descrSearchText) ) {
+  elementList.innerHTML = kittenOne;
+  }
+  
+  if( kittenTwoDesc.includes(descrSearchText) ) {
+  elementList.innerHTML = elementList.innerHTML + kittenTwo;
+  }
+  
+  if( kittenThreeDesc.includes(descrSearchText) ) {
+    elementList.innerHTML = elementList.innerHTML + kittenThree;
+  }
+  
+  const input_search_race = document.querySelector('.js_race');
+  const raceSearchText = input_search_race.value;
+  let html = '';
+  if (kittenOneRace === "") {
+    html = `Uy que despiste, no sabemos su raza`;
+  } else {
+    html = race;
+  }
+
+  
