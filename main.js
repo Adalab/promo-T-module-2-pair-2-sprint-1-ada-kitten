@@ -22,6 +22,12 @@ const kittenThreeDesc =
   " Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 const kittenThreeRace = "Maine Coon";
 
+let html_1 = '';
+  if (kittenOneRace === "") {
+    html_1 = `Uy que despiste, no sabemos su raza`;
+  } else {
+    html_1 = kittenOneRace;
+  }
 
 const kittenOne = `<li class="card">
 <article>
@@ -31,10 +37,17 @@ const kittenOne = `<li class="card">
     alt="gatito"
   />
   <h3 class="card_title">${kittenOneNameMayuscula}</h3>
-  <h4 class="card_race">${kittenOneRace}</h4>
+  <h4 class="card_race">${html_1}</h4>
   <p class="card_description">${kittenOneDesc}</p>
 </article>
 </li>`;
+
+let html_2 = '';
+  if (kittenTwoRace === "") {
+    html_2 = `Uy que despiste, no sabemos su raza`;
+  } else {
+    html_2 = kittenTwoRace;
+  }
 
 const kittenTwo = `<li class="card">
 <article>
@@ -44,12 +57,19 @@ const kittenTwo = `<li class="card">
     alt="sphynx-cat"
   />
   <h3 class="card_title">${kittenTwoNameMayuscula}</h3>
-  <h4 class="card_race">${kittenTwoRace}</h4>
+  <h4 class="card_race">${html_2}</h4>
   <p class="card_description">
   ${kittenTwoDesc}  
    </p>
 </article>
 </li>`;
+
+let html_3 = '';
+  if (kittenThreeRace === "") {
+    html_3 = `Uy que despiste, no sabemos su raza`;
+  } else {
+    html_3 = kittenThreeRace;
+  }
 
 const kittenThree = `<li class="card">
 <img
@@ -58,7 +78,7 @@ const kittenThree = `<li class="card">
   alt="maine-coon-cat"
 />
 <h3 class="card_title">${kittenThreeNameMayuscula}</h3>
-<h4 class="card_race">${kittenThreeRace}</h4>
+<h4 class="card_race">${html_3}</h4>
 <p class="card_description">
 ${kittenThreeDesc}
 </p>
@@ -81,14 +101,27 @@ const descrSearchText = input_search_desc.value;
   if( kittenThreeDesc.includes(descrSearchText) ) {
     elementList.innerHTML = elementList.innerHTML + kittenThree;
   }
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const labelMessageError = document.querySelector('.js-label-error');
+
+  const addKittenBtn = document.querySelector(".js-btn-add");
   
-  const input_search_race = document.querySelector('.js_race');
-  const raceSearchText = input_search_race.value;
-  let html = '';
-  if (kittenOneRace === "") {
-    html = `Uy que despiste, no sabemos su raza`;
-  } else {
-    html = race;
-  }
+  
+
+  addKittenBtn.addEventListener('click', (event) => {
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+       labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+    } else {
+      
+        
+    }
+    console.log()
+  });
+
 
   
