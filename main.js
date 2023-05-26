@@ -117,11 +117,19 @@ const descrSearchText = input_search_desc.value;
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
        labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
     } else {
-      
+      labelMessageError.innerHTML = "¡Bienvenido gatito!"
         
     }
-    console.log()
   });
+
+ /*const cancelBtn = document.querySelector('.js-btn-cancel');
+  cancelBtn.addEventListener('click', (evCancel) => {
+  const sectionForm = document.querySelector  
+  cancelBtn.classList.add('hidden');
+
+  }
+  );  ocultar seccion
+*/
 
 
   
