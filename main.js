@@ -111,6 +111,7 @@ const descrSearchText = input_search_desc.value;
   
 
   addKittenBtn.addEventListener('click', (event) => {
+    event.preventDefault();
     const valueDesc = inputDesc.value;
     const valuePhoto = inputPhoto.value;
     const valueName = inputName.value;
@@ -122,14 +123,26 @@ const descrSearchText = input_search_desc.value;
     }
   });
 
- /*const cancelBtn = document.querySelector('.js-btn-cancel');
-  cancelBtn.addEventListener('click', (evCancel) => {
-  const sectionForm = document.querySelector  
-  cancelBtn.classList.add('hidden');
-
-  }
-  );  ocultar seccion
-*/
 
 
   
+  const cancelBtn = document.querySelector('.js-btn-cancel');
+  const sectionForm = document.querySelector('.js-section-form'); 
+  cancelBtn.addEventListener('click', (evCancel) => {
+    evCancel.preventDefault();
+    sectionForm.classList.add('collapsed'); 
+  }
+  );
+  
+/*
+const plusBtn = document.querySelector('.js_plus')
+plusBtn.addEventListener('click', (event) => {
+event.preventDefault();
+  function showNewCatForm() {
+    sectionForm.classList.remove('collapsed');
+  }
+  function hideNewCatForm() {
+    sectionForm.classList.add('collapsed');
+  }
+});*/
+
