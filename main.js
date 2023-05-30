@@ -134,15 +134,21 @@ const descrSearchText = input_search_desc.value;
   }
   );
   
-/*
+
 const plusBtn = document.querySelector('.js_plus')
+function showNewCatForm() {
+  sectionForm.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  sectionForm.classList.add('collapsed');
+}
+
 plusBtn.addEventListener('click', (event) => {
-event.preventDefault();
-  function showNewCatForm() {
-    sectionForm.classList.remove('collapsed');
-  }
-  function hideNewCatForm() {
-    sectionForm.classList.add('collapsed');
-  }
-});*/
+if (sectionForm.classList.contains('collapsed')){
+  showNewCatForm();
+}
+else{
+  hideNewCatForm();
+}
+});
 
